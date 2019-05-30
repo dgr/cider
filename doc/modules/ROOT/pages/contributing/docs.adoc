@@ -1,19 +1,25 @@
 = Documentation
 
-Good documentation is just as important as good code.
-
-Consider improving and extending this manual.
+Good documentation is just as important as good code, sometimes even more so.
+Consider improving and extending this manual so that others can gain from your experience and wisdom.
 
 == Working on the Manual
 
-The manual is generated from the asciidoc files in the link:https://github.com/clojure-emacs/cider/tree/master/doc[doc] folder of CIDER's GitHub repo and is published to https://cider.mx.
-link:https://antora.org[Antora] is used to convert the manual into HTML.
-The filesystem layout is described at https://docs.antora.org/antora/2.0/component-structure/
+The CIDER manual is written in a markup language called link:https://en.wikipedia.org/wiki/AsciiDoc[AsciiDoc].
+AsciiDoc is semantically equivalent to DocBook, a well-established format for writing manuals and other technical documentation.
+However, DocBook is based on XML which makes it somewhat verbose and difficult to read.
+In contrast, AsciiDoc is human-readable, and because AsciiDoc can be translated into DocBook, it retains all the capabilities of the existing DocBook toolchains.
+To put it more simply, you can think of AsciiDoc as a more-powerful version of Markdown that leverages the DocBook toolchain.
 
-To make changes to the manual you simply have to change the files under `doc`.
-The manual will be regenerated manually periodically.
+The manual is generated from the AsciiDoc files in the link:https://github.com/clojure-emacs/cider/tree/master/doc[doc] folder of CIDER's GitHub repo and is published to https://cider.mx.
+link:https://antora.org[Antora] is used to convert the AsciiDoc files into HTML.
+The filesystem layout for the documentation is mandated by Antora and described at https://docs.antora.org/antora/2.0/component-structure/.
 
-You can build the documentation locally from the link:https://github.com/clojure-emacs/cider-site[cider-site] repo.
+Periodically, we'll regenerate the online version of the manual that appears at https://cider.mx using the source AsciiDoc files.
+
+If you're working on the manual, it can be nice to build the documentation locally (as a way to preview and proofread, for instance).
+You can do this using the link:https://github.com/clojure-emacs/cider-site[cider-site] repo.
+The process will pull updated source files from the CIDER repo.
 
 [source,shell]
 ----
