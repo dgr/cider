@@ -18,17 +18,25 @@ The filesystem layout for the documentation is mandated by Antora and described 
 Periodically, we'll regenerate the online version of the manual that appears at https://cider.mx using the source AsciiDoc files.
 
 If you're working on the manual, it can be nice to build the documentation locally (as a way to preview and proofread, for instance).
-You can do this using the link:https://github.com/clojure-emacs/cider-site[cider-site] repo.
-The process will pull updated source files from the CIDER repo.
+You can do this using the link:https://github.com/clojure-emacs/docs.cider.mx[CIDER docs] repo.
+The process will pull updated source files from the CIDER repo as required to rebuild the documentation.
+
+First, you'll need to install Antora:
+
+[source,shell]
+----
+$ npm i -g @antora/cli@2.0 @antora/site-generator-default@2.0
+----
+
+Then, you can rebuild the documentation site locally:
 
 [source,shell]
 ----
 $ cd cider-site
-$ npm install
-$ antora site.yml
+$ antora --pull site.yml
 ----
 
-TIP: If `npm install` fails, see link:https://docs.antora.org/antora/2.0/install/troubleshoot-nodegit/[Antora's troubleshooting documentation].
+TIP: If you get an error installing Antora, see link:https://docs.antora.org/antora/2.0/install/troubleshoot-nodegit/[Antora's troubleshooting documentation].
 
 If you want to make changes to the manual's page structure you'll have to edit
 link:https://github.com/clojure-emacs/cider/blob/master/doc/modules/ROOT/nav.adoc[nav.adoc].
